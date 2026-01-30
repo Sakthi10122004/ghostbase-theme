@@ -178,6 +178,12 @@ object {
     margin: 0;
 }
 
+/* Hide "Home" link (first item) */
+.header-nav .nav li:first-child,
+.mobile-nav .nav li:first-child {
+    display: none;
+}
+
 .header-nav .nav a {
     display: block;
     padding: 8px 16px;
@@ -256,11 +262,13 @@ object {
     border: none;
     cursor: pointer;
     color: var(--text-primary);
-    padding: 4px;
+    padding: 8px;
+    margin-left: auto;
 }
 
-/* Mobile Nav Panel (Hidden by default) */
+/* Mobile Nav Panel (Hidden by default on desktop) */
 .mobile-nav-panel {
+    display: none;
     position: absolute;
     top: 100%;
     left: 0;
@@ -313,6 +321,10 @@ object {
     }
 
     .mobile-menu-btn {
+        display: block;
+    }
+
+    .mobile-nav-panel {
         display: block;
     }
 }
