@@ -44,7 +44,9 @@
 
     <!-- Author Posts -->
     <section class="author-posts">
-        <h2 class="author-posts-title">Articles by {{author.name}}</h2>
+        {{#author}}
+        <h2 class="author-posts-title">Articles by {{name}}</h2>
+        {{/author}}
 
         {{#if posts}}
         <div class="post-grid">

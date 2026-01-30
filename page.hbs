@@ -4,7 +4,7 @@
             <h1 class="section-title">{{title}}</h1>
         </div>
 
-        {{#get "posts" limit="all" include="tags,authors"}}
+        {{#get "posts" limit="100" include="tags,authors"}}
         {{#if posts}}
         <div class="post-grid">
             {{#foreach posts}}
@@ -62,7 +62,7 @@
             <p class="all-tags-subtitle">Browse all topics and discover content that interests you</p>
         </header>
 
-        {{#get "tags" include="count.posts" limit="all"}}
+        {{#get "tags" include="count.posts" limit="100"}}
         {{#if tags}}
         <div class="tags-grid">
             {{#foreach tags}}
