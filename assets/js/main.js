@@ -1,24 +1,21 @@
 // Mobile Menu Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const closeMenu = document.getElementById('closeMenu');
-    const menuOverlay = document.getElementById('menuOverlay');
-    const sideNav = document.getElementById('sideNav');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileNavPanel = document.getElementById('mobileNavPanel');
     const body = document.body;
     
     function toggleMenu() {
-        const isOpen = body.classList.contains('menu-open');
+        const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
         
         // Toggle classes
+        mobileNavPanel.classList.toggle('is-open');
         body.classList.toggle('menu-open');
-        sideNav.classList.toggle('menu-open');
-        menuOverlay.classList.toggle('active');
         
         // Update aria-expanded attribute
-        mobileMenuToggle.setAttribute('aria-expanded', !isOpen);
+        mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
         
         // Prevent body scroll when menu is open
-        if (!isOpen) {
+        if (!isExpanded) {
             document.documentElement.style.overflow = 'hidden';
             body.style.overflow = 'hidden';
         } else {
@@ -27,60 +24,42 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    function closeMenuOnly() {
+    function closeMenu() {
+        mobileNavPanel.classList.remove('is-open');
         body.classList.remove('menu-open');
-        sideNav.classList.remove('menu-open');
-        menuOverlay.classList.remove('active');
-        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
         document.documentElement.style.overflow = '';
         body.style.overflow = '';
     }
     
     // Event Listeners
-    if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', toggleMenu);
-    }
-    
-    if (closeMenu) {
-        closeMenu.addEventListener('click', closeMenuOnly);
-    }
-    
-    if (menuOverlay) {
-        menuOverlay.addEventListener('click', closeMenuOnly);
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', toggleMenu);
     }
     
     // Close menu when clicking on navigation links
-    if (sideNav) {
-        const navLinks = sideNav.querySelectorAll('a:not(.gh-head-logo)');
+    if (mobileNavPanel) {
+        const navLinks = mobileNavPanel.querySelectorAll('a');
         navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                if (window.innerWidth <= 1023) {
-                    closeMenuOnly();
-                }
-            });
+            link.addEventListener('click', closeMenu);
         });
     }
     
     // Close menu on escape key
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && body.classList.contains('menu-open')) {
-            closeMenuOnly();
+            closeMenu();
         }
     });
     
     // Close menu on window resize to desktop
     function handleResize() {
         if (window.innerWidth > 1023 && body.classList.contains('menu-open')) {
-            closeMenuOnly();
+            closeMenu();
         }
     }
     
     window.addEventListener('resize', handleResize);
-    
-    // Close menu when page loads on desktop
-    if (window.innerWidth > 1023) {
-        closeMenuOnly();
-    }
 });
 
 // ================================
