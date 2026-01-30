@@ -98,6 +98,7 @@
     {{else}}
     <!-- REGULAR PAGE -->
     <article class="page-article {{post_class}}">
+        {{#if @page.show_title_and_feature_image}}
         <header class="page-header">
             <h1>{{title}}</h1>
 
@@ -105,6 +106,7 @@
             <img src="{{feature_image}}" alt="{{title}}">
             {{/if}}
         </header>
+        {{/if}}
 
         <section class="page-content">
             {{content}}

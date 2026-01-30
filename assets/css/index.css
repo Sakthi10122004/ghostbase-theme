@@ -448,6 +448,7 @@
     .post-card-excerpt {
         font-size: 0.8rem;
         -webkit-line-clamp: 1;
+        line-clamp: 1;
     }
 
     .no-posts {
