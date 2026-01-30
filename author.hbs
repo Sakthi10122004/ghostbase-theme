@@ -38,6 +38,59 @@
                 <a href="{{website}}" class="author-stat-link" target="_blank" rel="noopener">Website</a>
                 {{/if}}
             </div>
+
+            <div class="author-social-links">
+
+    {{#if website}}
+    <a href="{{website}}" class="author-social-link" target="_blank" rel="noopener" aria-label="Website">
+        {{> "icons/globe"}}
+    </a>
+    {{/if}}
+
+    {{#if facebook}}
+    <a href="{{social_url type="facebook"}}" class="author-social-link" target="_blank" rel="noopener" aria-label="Facebook">
+        {{> "icons/facebook"}}
+    </a>
+    {{/if}}
+
+    {{#if twitter}}
+    <a href="{{social_url type="twitter"}}" class="author-social-link" target="_blank" rel="noopener" aria-label="X">
+        {{> "icons/x"}}
+    </a>
+    {{/if}}
+
+    {{#if (social_url type="instagram")}}
+    <a href="{{social_url type="instagram"}}" class="author-social-link" target="_blank" rel="noopener" aria-label="Instagram">
+        {{> "icons/instagram"}}
+    </a>
+    {{/if}}
+
+    {{#if (social_url type="linkedin")}}
+    <a href="{{social_url type="linkedin"}}" class="author-social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+        {{> "icons/linkedin"}}
+    </a>
+    {{/if}}
+
+    {{#if (social_url type="threads")}}
+    <a href="{{social_url type="threads"}}" class="author-social-link" target="_blank" rel="noopener" aria-label="Threads">
+        {{> "icons/threads"}}
+    </a>
+    {{/if}}
+
+    {{#if (social_url type="youtube")}}
+    <a href="{{social_url type="youtube"}}" class="author-social-link" target="_blank" rel="noopener" aria-label="YouTube">
+        {{> "icons/youtube"}}
+    </a>
+    {{/if}}
+
+    {{#if (social_url type="tiktok")}}
+    <a href="{{social_url type="tiktok"}}" class="author-social-link" target="_blank" rel="noopener" aria-label="TikTok">
+        {{> "icons/tiktok"}}
+    </a>
+    {{/if}}
+
+</div>
+
         </div>
     </div>
     {{/author}}
@@ -82,7 +135,8 @@
         {{#if pagination.next}}
         <nav class="pagination" role="navigation" aria-label="Pagination">
             {{#if pagination.prev}}
-            <a class="pagination-prev" href="{{page_url pagination.prev}}" aria-label="Previous page">← Newer</a>
+            <a class="pagination-prev" href="{{page_url pagination.prev}}" aria-label="Previous page">←
+                Newer</a>
             {{/if}}
 
             <span class="pagination-info">Page {{pagination.page}} of {{pagination.pages}}</span>
@@ -92,7 +146,8 @@
         {{else}}
         {{#if pagination.prev}}
         <nav class="pagination" role="navigation" aria-label="Pagination">
-            <a class="pagination-prev" href="{{page_url pagination.prev}}" aria-label="Previous page">← Newer</a>
+            <a class="pagination-prev" href="{{page_url pagination.prev}}" aria-label="Previous page">←
+                Newer</a>
             <span class="pagination-info">Page {{pagination.page}} of {{pagination.pages}}</span>
         </nav>
         {{/if}}

@@ -20,22 +20,34 @@
     text-align: center;
 }
 
+/* Post Tags Container */
+.post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
 .post-tag-badge {
     display: inline-block;
-    padding: 6px 16px;
-    background: var(--color-primary);
-    color: #ffffff;
+    padding: 8px 18px;
+    background-color: #333333;
+    color: #ffffff !important;
     font-size: 0.85rem;
     font-weight: 600;
     border-radius: var(--radius-full);
     text-decoration: none;
-    margin-bottom: 20px;
     transition: all 0.2s ease;
 }
 
-.post-tag-badge:hover {
+.post-tag-badge:hover,
+.post-tag-badge:focus,
+.post-tag-badge:active {
+    color: #ffffff !important;
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0.9;
 }
 
 .post-title {
@@ -465,6 +477,96 @@ article header {
     .post-footer {
         margin-top: 48px;
     }
+}
+
+/* ================================
+   POST SHARE SECTION
+   ================================ */
+.post-share {
+    max-width: 800px;
+    margin: 48px auto;
+    padding: 32px;
+    background: var(--bg-light);
+    border-radius: var(--radius-lg);
+    text-align: center;
+}
+
+.share-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+}
+
+.share-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.share-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-full);
+    background-color: #333333;
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.share-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.share-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.share-twitter {
+    background-color: #000000;
+}
+
+.share-twitter:hover {
+    background-color: #333333;
+}
+
+.share-facebook {
+    background-color: #1877f2;
+}
+
+.share-facebook:hover {
+    background-color: #166fe5;
+}
+
+.share-whatsapp {
+    background-color: #25d366;
+}
+
+.share-whatsapp:hover {
+    background-color: #22c55e;
+}
+
+.share-copy {
+    background-color: #6b7280;
+}
+
+.share-copy:hover {
+    background-color: #4b5563;
+}
+
+.share-copy.copied {
+    background-color: #10b981;
 }
 
 /* ================================

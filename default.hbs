@@ -70,10 +70,75 @@
     <!-- FOOTER -->
     <footer class="site-footer">
         <div class="footer-inner">
-            <nav class="footer-nav">
-                {{navigation type="secondary"}}
-            </nav>
-            <p>© {{date format="YYYY"}} {{@site.title}}</p>
+            <!-- Footer Top -->
+            <div class="footer-top">
+                <!-- Brand Section -->
+                <div class="footer-brand">
+                    <a href="{{@site.url}}" class="footer-logo">
+                        {{#if @site.logo}}
+                        <img src="{{@site.logo}}" alt="{{@site.title}}">
+                        {{else}}
+                        <span>{{@site.title}}</span>
+                        {{/if}}
+                    </a>
+                    {{#if @site.description}}
+                    <p class="footer-tagline">{{@site.description}}</p>
+                    {{/if}}
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="footer-nav-section">
+                    <h4 class="footer-heading">Navigation</h4>
+                    <nav class="footer-nav" aria-label="Footer navigation">
+                        {{navigation}}
+                    </nav>
+                </div>
+
+                <!-- Secondary Navigation -->
+                <div class="footer-nav-section">
+                    <h4 class="footer-heading">Resources</h4>
+                    <nav class="footer-nav" aria-label="Footer secondary navigation">
+                        {{navigation type="secondary"}}
+                    </nav>
+                </div>
+
+                <!-- Newsletter / Connect -->
+                <div class="footer-connect">
+                    <h4 class="footer-heading">Stay Connected</h4>
+                    <p class="footer-connect-text">Subscribe for the latest updates</p>
+                    <a href="#/portal/signup" class="footer-subscribe-btn">Subscribe</a>
+
+                    <!-- Social Links -->
+                    <div class="footer-social">
+                        {{#if @site.facebook}}
+                        <a href="{{facebook_url}}" class="footer-social-link" target="_blank" rel="noopener"
+                            aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
+                        </a>
+                        {{/if}}
+                        {{#if @site.twitter}}
+                        <a href="{{twitter_url}}" class="footer-social-link" target="_blank" rel="noopener"
+                            aria-label="X">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">© {{date format="YYYY"}} {{@site.title}}. All rights reserved.</p>
+                <p class="footer-powered">Powered by <a href="https://ghost.org" target="_blank"
+                        rel="noopener">Ghost</a></p>
+            </div>
         </div>
     </footer>
 
