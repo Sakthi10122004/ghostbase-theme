@@ -195,6 +195,8 @@ Clean URLs
 Accessible navigation and buttons
 
 🗂️ Theme Structure
+
+
 <img width="722" height="498" alt="image" src="https://github.com/user-attachments/assets/e34e9dda-1753-4388-a0fb-2d7c097f4655" />
 
 
