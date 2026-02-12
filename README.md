@@ -275,4 +275,7 @@ Built with ❤️ for Ghost CMS
 Designed for clarity, performance, and scalability.
 
 Development & Maintenance:
+👉 https://github.com/Sakthi10122004
+Supported By:
+👉 https://github.com/ajith4Tech
 👉 https://github.com/T4GC-Official
