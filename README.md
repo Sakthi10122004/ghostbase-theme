@@ -201,13 +201,16 @@ Accessible navigation and buttons
 │   │   └── screen.css
 │   ├── js
 │   └── images
+│
 ├── partials
+│
 ├── default.hbs
 ├── index.hbs
 ├── post.hbs
 ├── page.hbs
 ├── author.hbs
 ├── tag.hbs
+│
 ├── package.json
 └── README.md
 
