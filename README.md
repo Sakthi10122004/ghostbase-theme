@@ -195,21 +195,10 @@ Clean URLs
 Accessible navigation and buttons
 
 🗂️ Theme Structure
-.
-├── assets
-│   ├── css
-│   │   └── screen.css
-│   ├── js
-│   └── images
-├── partials
-├── default.hbs
-├── index.hbs
-├── post.hbs
-├── page.hbs
-├── author.hbs
-├── tag.hbs
-├── package.json
-└── README.md
+
+
+<img width="722" height="498" alt="image" src="https://github.com/user-attachments/assets/a183869e-95d7-4be3-aff4-63ca566e13ee" />
+
 
 ⚙️ Requirements
 
